@@ -1,0 +1,31 @@
+<!-- this is an ejs file that that is use in express -->
+<!-- it accept both html and javascript -->
+<!-- it has a syntax of jnjecting javascript data -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body style="background-color: skyblue; font-size: 35px;">
+    <% include partials/nav.ejs %>
+
+    <h1>Welcome to <%=person%> profile</h1>
+    <p><strong>Age:</strong> <%= data.age%> </p>
+    <p><strong>Job:</strong> <%= data.job%> </p>
+    <!-- injecting javascript -->
+
+    <h2>Hobbies</h2>
+
+    <ul>
+        <!-- using the for loop -->
+        <% data.hobbies.forEach(function(item){  %>
+            <li><%= item %></li>
+       <%  }); %>
+    </ul>
+
+</body>
+</html> 
